@@ -9,6 +9,10 @@
 #import "AddAlarmViewController.h"
 #import "RepeatViewController.h"
 
+static NSString * const kSettingsCellIdentifier = @"SettingsCell";
+
+NSString * const kLocalNotificationsPersistenceKey = @"localNotificationsData";
+NSString * const kLocalNotificationsArrayPersistenceKey = @"localNotificationsDatas"; // Data is already plural.
 
 @interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -23,6 +27,8 @@
 
 @implementation AddAlarmViewController
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,6 +42,8 @@
     self.slider.hidden = YES;
 }
 
+#pragma mark - UITableViewDataSource/UITableViewDelegate
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 3;
@@ -43,9 +51,8 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
-    NSArray *settings = [[NSArray alloc] initWithObjects:@"Repeat", @"Sound", @"Snooze", nil];
-    cell.textLabel.text = [settings objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIdentifier];
+    cell.textLabel.text = [[AddAlarmViewController settings] objectAtIndex:indexPath.row];
     
     UISwitch *switcheroo = [[UISwitch alloc] initWithFrame:CGRectZero];
     [switcheroo addTarget:self
@@ -65,11 +72,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        RepeatViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"daysVC"];
+        RepeatViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:kRepeatViewControllerIdentifier];
         [self presentViewController:dvc animated:YES completion:nil];
         dvc.navigationController.navigationBarHidden = NO;
     }
 }
+
+#pragma mark - Action handlers
 
 - (void)changeSwitch:(id)sender
 {
@@ -120,19 +129,36 @@
     }
 }
 
+#pragma mark - Persistence
+
 -(void)saveDefault:(UILocalNotification *)localNotification
 {
     NSData *localNotificationData = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setValue:localNotificationData forKey:@"localNotificationData"];
+    [prefs setValue:localNotificationData forKey:kLocalNotificationsPersistenceKey]; // Don't see what this is doing.  This value is never read.  Why do you have two keys for this?
     
-    NSMutableArray *localNotificationsDatas = [[NSMutableArray alloc] initWithArray:[prefs objectForKey:@"localNotificationsDatas"]];
+    NSMutableArray *localNotificationsDatas = [[NSMutableArray alloc] initWithArray:[prefs objectForKey:kLocalNotificationsArrayPersistenceKey]];
     [localNotificationsDatas addObject:localNotificationData];
-    [prefs setObject:localNotificationsDatas forKey:@"localNotificationsDatas"];
-    self.localNotifications = localNotificationsDatas;
+    [prefs setObject:localNotificationsDatas forKey:kLocalNotificationsArrayPersistenceKey];
+    self.localNotifications = localNotificationsDatas; // I don't like that this is being set in this method.  Seems like this should be extracted.
     [prefs synchronize];
 }
 
+#pragma mark - Static Accessors
+
++ (NSArray *)settings
+{
+    // Don't allocate this everytime you execute this method.  This is a construct which ensures a bit
+    // of code is only executed once.  Storing settings in a static array ensures that it will be saved
+    // for all invocations of this method across every known instance of this class.
+    static NSArray *settings;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        settings = [[NSArray alloc] initWithObjects:@"Repeat", @"Sound", @"Snooze", nil];
+    });
+    
+    return settings;
+}
 
 @end
 

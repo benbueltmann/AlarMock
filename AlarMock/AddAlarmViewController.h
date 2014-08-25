@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 AlarMock Industries. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+UIKIT_EXTERN NSString * const kLocalNotificationsPersistenceKey;
+UIKIT_EXTERN NSString * const kLocalNotificationsArrayPersistenceKey;
 
 @interface AddAlarmViewController : UIViewController
 @property NSMutableArray *localNotifications;

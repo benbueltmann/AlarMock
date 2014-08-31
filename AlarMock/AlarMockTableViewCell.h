@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TableViewCell;
+@class AlarMockTableViewCell;
 
 @protocol TableViewCellDelegate
 
--(void)tableViewCell:(TableViewCell *)tableViewCell switchDidChangeValue:(UISwitch *)switcheroo;
+- (void)alarMockTableViewCell:(AlarMockTableViewCell *)alarMockTableViewCell switchDidChangeValue:(UISwitch *)switcheroo;
 
 @end
 
 
-@interface TableViewCell : UITableViewCell
+@interface AlarMockTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) id<TableViewCellDelegate> delegate;
 
--(void)setSwitchState:(BOOL)on;
+- (void)setSwitchState:(BOOL)on;
 
 @end

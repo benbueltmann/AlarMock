@@ -6,20 +6,23 @@
 //  Copyright (c) 2014 AlarMock Industries. All rights reserved.
 //
 
-#import "AlarmJokes.h"
+#import "AlarmJoke.h"
 
-@implementation AlarmJokes
+@implementation AlarmJoke
 
-+(void)load
+@dynamic joke;
+
+#pragma mark - PFSubclass
+
++ (void)load
 {
     [self registerSubclass];
 }
 
-+(NSString *)parseClassName
++ (NSString *)parseClassName
 {
+    // TODO: Change this to singular
     return @"AlarmJokes";
 }
 
-
-@dynamic joke;
 @end

@@ -1,5 +1,5 @@
 //
-//  AlarmJokes.h
+//  SnoozeJokes.h
 //  AlarMock
 //
 //  Created by Ben Bueltmann on 8/25/14.
@@ -9,11 +9,9 @@
 #import <Parse/Parse.h>
 #import <Parse/PFObject+Subclass.h>
 
-@interface AlarmJokes : PFObject<PFSubclassing>
+// TODO: Add keyed archiver stuff
+@interface SnoozeJoke : PFObject<PFSubclassing>
 
-@property NSString *joke;
-
-+(NSString *)parseClassName;
-+(void)load;
+@property (nonatomic) NSString *joke;
 
 @end

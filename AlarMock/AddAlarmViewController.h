@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 AlarMock Industries. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class AlarmEngine;
 
 @interface AddAlarmViewController : UIViewController
 
-@property NSMutableArray *localNotifications;
+@property (nonatomic) AlarmEngine *alarmEngine;
 
 @end

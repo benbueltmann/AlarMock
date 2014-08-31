@@ -8,17 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1F6CACA519A7C5070025CB67 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CACA419A7C5070025CB67 /* AddAlarmViewController.m */; };
-		792A791619ABF4C80099A32F /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792A791519ABF4C80099A32F /* TableViewCell.m */; };
+		71623D2519B2B6EC0025AE4B /* JokeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 71623D2419B2B6EC0025AE4B /* JokeCollection.m */; };
+		792A791619ABF4C80099A32F /* AlarMockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792A791519ABF4C80099A32F /* AlarMockTableViewCell.m */; };
 		79318CCF19A8E7F70021D655 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79318CCE19A8E7F70021D655 /* CoreData.framework */; };
 		797DF3DC19A962FE00FDD94B /* RepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797DF3DB19A962FE00FDD94B /* RepeatViewController.m */; };
 		79A2518F19AE2E7F009174C8 /* AlarmEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A2518E19AE2E7F009174C8 /* AlarmEngine.m */; };
 		79A2519119AF8366009174C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A2519019AF8365009174C8 /* AVFoundation.framework */; };
-		79A2519919AFB923009174C8 /* groudhog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 79A2519819AFB923009174C8 /* groudhog.mp3 */; };
 		79A2A95B19B0C5EC005BB9AC /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A2A95A19B0C5EC005BB9AC /* Alarm.m */; };
 		79A2A95D19B0C6CA005BB9AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A2A95C19B0C6CA005BB9AC /* Default-568h@2x.png */; };
-		98315AFE19ABAE3F00D717F0 /* Jokes.m in Sources */ = {isa = PBXBuildFile; fileRef = 98315AFD19ABAE3F00D717F0 /* Jokes.m */; };
-		98315B0119ABD40300D717F0 /* AlarmJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = 98315B0019ABD40300D717F0 /* AlarmJokes.m */; };
-		98315B0419ABD4E700D717F0 /* SnoozeJokes.m in Sources */ = {isa = PBXBuildFile; fileRef = 98315B0319ABD4E700D717F0 /* SnoozeJokes.m */; };
+		98315B0119ABD40300D717F0 /* AlarmJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 98315B0019ABD40300D717F0 /* AlarmJoke.m */; };
+		98315B0419ABD4E700D717F0 /* SnoozeJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 98315B0319ABD4E700D717F0 /* SnoozeJoke.m */; };
 		98962DBD19A7C0E700DEE9B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98962DBC19A7C0E700DEE9B5 /* Foundation.framework */; };
 		98962DBF19A7C0E700DEE9B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98962DBE19A7C0E700DEE9B5 /* CoreGraphics.framework */; };
 		98962DC119A7C0E700DEE9B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98962DC019A7C0E700DEE9B5 /* UIKit.framework */; };
@@ -59,24 +58,23 @@
 /* Begin PBXFileReference section */
 		1F6CACA319A7C5070025CB67 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		1F6CACA419A7C5070025CB67 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
-		792A791419ABF4C80099A32F /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		792A791519ABF4C80099A32F /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		71623D2319B2B6EC0025AE4B /* JokeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeCollection.h; sourceTree = "<group>"; };
+		71623D2419B2B6EC0025AE4B /* JokeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeCollection.m; sourceTree = "<group>"; };
+		792A791419ABF4C80099A32F /* AlarMockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarMockTableViewCell.h; sourceTree = "<group>"; };
+		792A791519ABF4C80099A32F /* AlarMockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarMockTableViewCell.m; sourceTree = "<group>"; };
 		79318CCE19A8E7F70021D655 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		797DF3DA19A962FE00FDD94B /* RepeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatViewController.h; sourceTree = "<group>"; };
 		797DF3DB19A962FE00FDD94B /* RepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatViewController.m; sourceTree = "<group>"; };
 		79A2518D19AE2E7F009174C8 /* AlarmEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmEngine.h; sourceTree = "<group>"; };
 		79A2518E19AE2E7F009174C8 /* AlarmEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmEngine.m; sourceTree = "<group>"; };
 		79A2519019AF8365009174C8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		79A2519819AFB923009174C8 /* groudhog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = groudhog.mp3; path = ../../../Downloads/groudhog.mp3; sourceTree = "<group>"; };
 		79A2A95919B0C5EC005BB9AC /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		79A2A95A19B0C5EC005BB9AC /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		79A2A95C19B0C6CA005BB9AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		98315AFC19ABAE3F00D717F0 /* Jokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jokes.h; sourceTree = "<group>"; };
-		98315AFD19ABAE3F00D717F0 /* Jokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jokes.m; sourceTree = "<group>"; };
-		98315AFF19ABD40300D717F0 /* AlarmJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmJokes.h; sourceTree = "<group>"; };
-		98315B0019ABD40300D717F0 /* AlarmJokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmJokes.m; sourceTree = "<group>"; };
-		98315B0219ABD4E700D717F0 /* SnoozeJokes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnoozeJokes.h; sourceTree = "<group>"; };
-		98315B0319ABD4E700D717F0 /* SnoozeJokes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnoozeJokes.m; sourceTree = "<group>"; };
+		98315AFF19ABD40300D717F0 /* AlarmJoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmJoke.h; sourceTree = "<group>"; };
+		98315B0019ABD40300D717F0 /* AlarmJoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmJoke.m; sourceTree = "<group>"; };
+		98315B0219ABD4E700D717F0 /* SnoozeJoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnoozeJoke.h; sourceTree = "<group>"; };
+		98315B0319ABD4E700D717F0 /* SnoozeJoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnoozeJoke.m; sourceTree = "<group>"; };
 		98962DB919A7C0E700DEE9B5 /* AlarMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98962DBC19A7C0E700DEE9B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98962DBE19A7C0E700DEE9B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -207,17 +205,16 @@
 				98962DD219A7C0E700DEE9B5 /* AlarMockViewController.m */,
 				797DF3DA19A962FE00FDD94B /* RepeatViewController.h */,
 				797DF3DB19A962FE00FDD94B /* RepeatViewController.m */,
-				792A791419ABF4C80099A32F /* TableViewCell.h */,
-				792A791519ABF4C80099A32F /* TableViewCell.m */,
+				792A791419ABF4C80099A32F /* AlarMockTableViewCell.h */,
+				792A791519ABF4C80099A32F /* AlarMockTableViewCell.m */,
+				71623D2319B2B6EC0025AE4B /* JokeCollection.h */,
+				71623D2419B2B6EC0025AE4B /* JokeCollection.m */,
+				98315AFF19ABD40300D717F0 /* AlarmJoke.h */,
+				98315B0019ABD40300D717F0 /* AlarmJoke.m */,
+				98315B0219ABD4E700D717F0 /* SnoozeJoke.h */,
+				98315B0319ABD4E700D717F0 /* SnoozeJoke.m */,
 				79A2A95C19B0C6CA005BB9AC /* Default-568h@2x.png */,
 				98962DC319A7C0E700DEE9B5 /* Supporting Files */,
-				98315AFF19ABD40300D717F0 /* AlarmJokes.h */,
-				98315B0019ABD40300D717F0 /* AlarmJokes.m */,
-				98315B0219ABD4E700D717F0 /* SnoozeJokes.h */,
-				98315B0319ABD4E700D717F0 /* SnoozeJokes.m */,
-				98315AFC19ABAE3F00D717F0 /* Jokes.h */,
-				79A2519819AFB923009174C8 /* groudhog.mp3 */,
-				98315AFD19ABAE3F00D717F0 /* Jokes.m */,
 			);
 			path = AlarMock;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79A2519919AFB923009174C8 /* groudhog.mp3 in Resources */,
 				98962DC719A7C0E700DEE9B5 /* InfoPlist.strings in Resources */,
 				79A2A95D19B0C6CA005BB9AC /* Default-568h@2x.png in Resources */,
 				98962DD019A7C0E700DEE9B5 /* Main.storyboard in Resources */,
@@ -352,14 +348,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98315B0119ABD40300D717F0 /* AlarmJokes.m in Sources */,
+				98315B0119ABD40300D717F0 /* AlarmJoke.m in Sources */,
 				79A2A95B19B0C5EC005BB9AC /* Alarm.m in Sources */,
-				98315AFE19ABAE3F00D717F0 /* Jokes.m in Sources */,
-				98315B0419ABD4E700D717F0 /* SnoozeJokes.m in Sources */,
+				98315B0419ABD4E700D717F0 /* SnoozeJoke.m in Sources */,
 				98962DD319A7C0E700DEE9B5 /* AlarMockViewController.m in Sources */,
 				79A2518F19AE2E7F009174C8 /* AlarmEngine.m in Sources */,
-				792A791619ABF4C80099A32F /* TableViewCell.m in Sources */,
+				792A791619ABF4C80099A32F /* AlarMockTableViewCell.m in Sources */,
 				1F6CACA519A7C5070025CB67 /* AddAlarmViewController.m in Sources */,
+				71623D2519B2B6EC0025AE4B /* JokeCollection.m in Sources */,
 				98962DCD19A7C0E700DEE9B5 /* AppDelegate.m in Sources */,
 				797DF3DC19A962FE00FDD94B /* RepeatViewController.m in Sources */,
 				98962DC919A7C0E700DEE9B5 /* main.m in Sources */,

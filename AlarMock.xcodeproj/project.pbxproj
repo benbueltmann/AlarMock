@@ -40,6 +40,8 @@
 		984E0DEE19BF5A4D00598E02 /* icon_60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 984E0DE919BF5A4D00598E02 /* icon_60x60.png */; };
 		984E0DEF19BF5A4D00598E02 /* splashscreenFlat.png in Resources */ = {isa = PBXBuildFile; fileRef = 984E0DEA19BF5A4D00598E02 /* splashscreenFlat.png */; };
 		984E0DF119BF8F2A00598E02 /* cave.wav in Resources */ = {isa = PBXBuildFile; fileRef = 984E0DF019BF8F2A00598E02 /* cave.wav */; };
+		984E0DF819BF9F6700598E02 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 984E0DF619BF9F6700598E02 /* 2.wav */; };
+		984E0DF919BF9F6700598E02 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 984E0DF719BF9F6700598E02 /* 3.wav */; };
 		98962DBD19A7C0E700DEE9B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98962DBC19A7C0E700DEE9B5 /* Foundation.framework */; };
 		98962DBF19A7C0E700DEE9B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98962DBE19A7C0E700DEE9B5 /* CoreGraphics.framework */; };
 		98962DC119A7C0E700DEE9B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98962DC019A7C0E700DEE9B5 /* UIKit.framework */; };
@@ -125,6 +127,8 @@
 		984E0DE919BF5A4D00598E02 /* icon_60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_60x60.png; sourceTree = "<group>"; };
 		984E0DEA19BF5A4D00598E02 /* splashscreenFlat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashscreenFlat.png; sourceTree = "<group>"; };
 		984E0DF019BF8F2A00598E02 /* cave.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cave.wav; sourceTree = "<group>"; };
+		984E0DF619BF9F6700598E02 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		984E0DF719BF9F6700598E02 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
 		98962DB919A7C0E700DEE9B5 /* AlarMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98962DBC19A7C0E700DEE9B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98962DBE19A7C0E700DEE9B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,6 +198,8 @@
 				984E0DF019BF8F2A00598E02 /* cave.wav */,
 				79E2CBED19BD3A9500352117 /* 0.wav */,
 				79E2CBEE19BD3A9500352117 /* 1.wav */,
+				984E0DF619BF9F6700598E02 /* 2.wav */,
+				984E0DF719BF9F6700598E02 /* 3.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -531,11 +537,13 @@
 				79E2CBF019BD3A9500352117 /* 1.wav in Resources */,
 				984E0DEC19BF5A4D00598E02 /* icon_120x120.png in Resources */,
 				984E0DEE19BF5A4D00598E02 /* icon_60x60.png in Resources */,
+				984E0DF919BF9F6700598E02 /* 3.wav in Resources */,
 				984E0DEB19BF5A4D00598E02 /* blankScreen.png in Resources */,
 				7172A30319BB87F80087DEB0 /* ClanOT-NarrMedium.otf in Resources */,
 				98962DC719A7C0E700DEE9B5 /* InfoPlist.strings in Resources */,
 				79E2CBEF19BD3A9500352117 /* 0.wav in Resources */,
 				1FDC25F719B666F60009ED53 /* Images.xcassets in Resources */,
+				984E0DF819BF9F6700598E02 /* 2.wav in Resources */,
 				984E0DF119BF8F2A00598E02 /* cave.wav in Resources */,
 				98962DD019A7C0E700DEE9B5 /* Main.storyboard in Resources */,
 			);

@@ -89,7 +89,7 @@
         
         mediaPicker.delegate = self;
         mediaPicker.allowsPickingMultipleItems = NO;
-        mediaPicker.prompt = @"What song would you like stuck in your head?";
+        mediaPicker.prompt = @"Pick a song that might wake you up…";
         [self presentViewController:mediaPicker animated:YES completion:nil];
     } else {
         self.notificationSoundText = [NSString stringWithFormat:@"%ld", (long)indexPath.row];

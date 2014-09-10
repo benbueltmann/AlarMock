@@ -11,6 +11,7 @@
 @implementation AlarmJoke
 
 @dynamic joke;
+@dynamic wav;
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
@@ -18,6 +19,7 @@
 
     if (self) {
         self.joke = [decoder decodeObjectForKey:@"joke"];
+        self.wav = [decoder decodeObjectForKey:@"audio"];
     }
 
     return self;
@@ -26,6 +28,7 @@
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:self.joke forKey:@"joke"];
+    [encoder encodeObject:self.wav forKey:@"audio"];
 }
 
 #pragma mark - PFSubclass

@@ -39,7 +39,7 @@
     self.notificationSoundText = [NSString new];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    self.sounds = @[@"Alert 1", @"Alert 2", @"Alert 3", @"Alert 4"];
+    self.sounds = @[@"Bothersome Sound", @"Irritating Sound", @"Vexatious Sound", @"Woefully Unpleasant Sound"];
     self.tableView.backgroundColor = [UIColor clearColor];
 }
 
@@ -108,21 +108,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SoundCell" forIndexPath:indexPath];
 
     cell.textLabel.textColor = [AMColor whiteColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    cell.selectedBackgroundView = [UIView new];
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
+
     if (indexPath.section == 0) {
-        cell.textLabel.font = [AMFont book22];
+        cell.textLabel.font = [AMFont book16];
         cell.textLabel.text = [self.sounds objectAtIndex:indexPath.row];
+        if ([indexPath compare:self.lastIndexPath] == NSOrderedSame) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     } else {
         cell.textLabel.font = [AMFont book16];
         cell.textLabel.text = @"Choose a song from your Library";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     }
-    
-    if ([indexPath compare:self.lastIndexPath] == NSOrderedSame) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
+
     return cell;
 }
 

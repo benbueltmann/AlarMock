@@ -84,19 +84,29 @@
 - (void)updateAlarmQueue
 {
     Alarm *firstFiredAlarm = self.alarmQueue.firstObject;
+
     if (firstFiredAlarm.notification.soundName) {
-        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"0" ofType:@".wav"];
-        NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
-        
-        self.aVPlayer = [[AVPlayer alloc] initWithURL:soundURL];
+//put the jokeaudio here
+        id url = [NSURL URLWithString:firstFiredAlarm.spokenJokeWavFile.url];
+        self.aVPlayer = [[AVPlayer alloc] initWithURL:url];
         [self.aVPlayer play];
+//        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"0" ofType:@".wav"];
+//        NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+//        
+//        self.aVPlayer = [[AVPlayer alloc] initWithURL:soundURL];
+//        [self.aVPlayer play];
     } else if (firstFiredAlarm.alarmSong) {
         NSURL *songUrl = [firstFiredAlarm.alarmSong valueForProperty:MPMediaItemPropertyAssetURL];
         [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
         self.aVPlayer = [[AVPlayer alloc] initWithURL:songUrl];
         [self.aVPlayer play];
     }
-    
+//    else if (firstFiredAlarm.spokenJokeWavFile) {
+//        id url = [NSURL URLWithString:firstFiredAlarm.spokenJokeWavFile.url];
+//        self.aVPlayer = [[AVPlayer alloc] initWithURL:url];
+//        [self.aVPlayer play];
+//    }
+
     [[[UIAlertView alloc] initWithTitle:firstFiredAlarm.joke
                                 message:nil
                                delegate:self

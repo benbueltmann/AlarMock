@@ -12,5 +12,5 @@
 @interface AlarmJoke : PFObject<PFSubclassing>
 
 @property (nonatomic) NSString *joke;
-
+@property PFFile *wav;
 @end

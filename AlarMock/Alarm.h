@@ -17,6 +17,7 @@ FOUNDATION_EXTERN NSString * const kAlarmValueChangedNotification;
 
 @property (nonatomic) NSTimeInterval snoozeInterval;
 @property (nonatomic) MPMediaItem *alarmSong;
+@property (nonatomic) PFFile *spokenJokeWavFile;
 @property (nonatomic) BOOL on;
 @property (nonatomic) NSDate *fireDate;
 @property (nonatomic) NSString *notificationSoundText;

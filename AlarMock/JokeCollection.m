@@ -77,9 +77,9 @@
     return self.alarmJokes.am_randomElement;
 }
 
-- (NSString *)randomSnoozeJoke
+- (SnoozeJoke *)randomSnoozeJoke
 {
-    return [self.snoozeJokes.am_randomElement joke];
+    return self.snoozeJokes.am_randomElement;
 }
 
 @end

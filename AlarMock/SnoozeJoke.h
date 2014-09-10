@@ -12,5 +12,5 @@
 @interface SnoozeJoke : PFObject<PFSubclassing>
 
 @property (nonatomic) NSString *joke;
-
+@property PFFile *audio;
 @end

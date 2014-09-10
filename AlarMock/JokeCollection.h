@@ -7,12 +7,13 @@
 //
 
 @class AlarmJoke;
+@class SnoozeJoke;
 
 @interface JokeCollection : NSObject <NSCoding>
 
 @property (nonatomic, readonly) AlarmJoke *randomAlarmJoke;
 // changed from NSString
-@property (nonatomic, readonly) NSString *randomSnoozeJoke;
+@property (nonatomic, readonly) SnoozeJoke *randomSnoozeJoke;
 
 - (void)queryAlarmJokesWithHandler:(void (^)(NSArray *jokes, NSError *error))handler;
 - (void)querySnoozeJokesWithHandler:(void (^)(NSArray *jokes, NSError *error))handler;

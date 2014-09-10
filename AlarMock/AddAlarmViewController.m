@@ -89,12 +89,12 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
-
+    SoundViewController *SoundVC;
     if (indexPath.row == 0) {
         cell.textLabel.font = [AMFont book22];
         cell.selectedBackgroundView = [UIView new];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
-        cell.detailTextLabel.text = @"IODSFJ";
+        cell.detailTextLabel.text = [@"%@", ];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         [cell.cellSwitch setOn:NO];
@@ -195,6 +195,7 @@
 {
     self.alarmSong = alarmSong;
     self.notificationSoundText = soundText;
+    [self.tableView reloadData];
 }
 
 @end

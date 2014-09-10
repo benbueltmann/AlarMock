@@ -11,6 +11,7 @@
 @implementation SnoozeJoke
 
 @dynamic joke;
+@dynamic audio;
 
 - (id)initWithCoder:(NSCoder *)decoder
 {

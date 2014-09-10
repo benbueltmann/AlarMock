@@ -87,7 +87,7 @@
 
     if (firstFiredAlarm.notification.soundName) {
 //put the jokeaudio here
-        id url = [NSURL URLWithString:firstFiredAlarm.spokenJokeWavFile.url];
+        id url = [NSURL URLWithString:firstFiredAlarm.speechWavURLString];
         self.aVPlayer = [[AVPlayer alloc] initWithURL:url];
         [self.aVPlayer play];
 //        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"0" ofType:@".wav"];

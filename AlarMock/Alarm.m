@@ -54,6 +54,7 @@ NSString * const kAlarmValueChangedNotification = @"AlarmValueChangedNotificatio
         _daysChecked = [decoder decodeObjectForKey:@"daysChecked"];
         _jokeCollection = [decoder decodeObjectForKey:@"jokeCollection"];
         _notificationSoundText = [decoder decodeObjectForKey:@"notificationSoundText"];
+        _speechWavURLString = [decoder decodeObjectForKey:@"speechWavURL"];
     }
     
     return self;
@@ -70,6 +71,7 @@ NSString * const kAlarmValueChangedNotification = @"AlarmValueChangedNotificatio
     [encoder encodeObject:_daysChecked forKey:@"daysChecked"];
     [encoder encodeObject:_jokeCollection forKey:@"jokeCollection"];
     [encoder encodeObject:_notificationSoundText forKey:@"notificationSoundText"];
+    [encoder encodeObject:_speechWavURLString forKey:@"speechWavURL"];
 }
 
 #pragma mark - Snooze
@@ -97,7 +99,7 @@ NSString * const kAlarmValueChangedNotification = @"AlarmValueChangedNotificatio
     } else {
         AlarmJoke *joke = self.jokeCollection.randomAlarmJoke;
         self.notification.alertBody = joke.joke;
-        self.spokenJokeWavFile = joke.wav;
+        self.speechWavURLString = joke.audio.url;
     }
 }
 

@@ -75,7 +75,7 @@
                             <outlet property="tableView" destination="cKX-XF-MJ6" id="e8Q-gC-hxL"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="AlarMock" id="667-nz-W29">
+                    <navigationItem key="navigationItem" title="ALARM MOCK" id="667-nz-W29">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="2ru-Ml-puL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="1516" y="-269"/>
         </scene>
-        <!--Add Alarm View Controller - Add Alarm-->
+        <!--Add Alarm View Controller - ADD ALARM-->
         <scene sceneID="Zu8-Yv-70k">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="AjE-70-so0" customClass="AddAlarmViewController" sceneMemberID="viewController">
@@ -307,7 +307,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <toolbarItems>
                         <barButtonItem id="Zcx-Tr-4Ar"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Add Alarm" id="Yx4-8k-Amt">
+                    <navigationItem key="navigationItem" title="ADD ALARM" id="Yx4-8k-Amt">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="qYb-Nr-BI7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -343,7 +343,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tJv-nb-nyi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.28686701642335766" green="0.37522524003025348" blue="0.54721380739795911" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.29633836190651203" green="0.37522524003025348" blue="0.54721380739795911" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

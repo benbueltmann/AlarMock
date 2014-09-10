@@ -12,9 +12,9 @@
 #import "AlarmJoke.h"
 #import "AlarmEngine.h"
 #import "AlarMockTableViewCell.h"
+#import "AMColor.h"
+#import "AMFont.h"
 #import "SoundViewController.h"
-#import "UIColor+AMTheme.h"
-#import "UIFont+AMTheme.h"
 
 @interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate, SoundViewControllerDelegate>
 
@@ -42,8 +42,8 @@
     
     self.settings = @[@"Sound", @"Snooze"];
     
-    self.snoozeMockLabel.font = [UIFont am_book14];
-    self.snoozeTimeLabel.font = [UIFont am_book14];
+    self.snoozeMockLabel.font = [AMFont book14];
+    self.snoozeTimeLabel.font = [AMFont book14];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -77,7 +77,7 @@
 {
     AlarMockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
     cell.textLabel.text = [self.settings objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont am_book22];
+    cell.textLabel.font = [AMFont book22];
     if (indexPath.row == 0) {
         cell.cellSwitch.hidden = YES;
     }
@@ -178,7 +178,6 @@
 {
     self.alarmSong = alarmSong;
     self.notificationSoundText = soundText;
-    //self.alarm.notificationSoundText = soundText;
 }
 
 @end
@@ -205,7 +204,7 @@
     if([self view:self hasSuperviewOfClass:[UIDatePicker class]] ||
        [self view:self hasSuperviewOfClass:NSClassFromString(@"UIDatePickerWeekMonthDayView")] ||
        [self view:self hasSuperviewOfClass:NSClassFromString(@"UIDatePickerContentView")]){
-        [self swizzledSetTextColor:[UIColor am_whiteColor]];
+        [self swizzledSetTextColor:[AMColor whiteColor]];
     } else {
         [self swizzledSetTextColor:textColor];
     }
@@ -216,7 +215,7 @@
     if([self view:self hasSuperviewOfClass:[UIDatePicker class]] ||
        [self view:self hasSuperviewOfClass:NSClassFromString(@"UIDatePickerWeekMonthDayView")] ||
        [self view:self hasSuperviewOfClass:NSClassFromString(@"UIDatePickerContentView")]){
-        [self swizzledSetFont:[UIFont am_book22]];
+        [self swizzledSetFont:[AMFont book22]];
     } else {
         [self swizzledSetFont:font];
     }

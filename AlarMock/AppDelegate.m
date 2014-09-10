@@ -16,10 +16,10 @@
 #import "AlarmEngine.h"
 #import "AlarmJoke.h"
 #import "AlarMockViewController.h"
+#import "AMColor.h"
+#import "AMFont.h"
+#import "AMNavigationAppearance.h"
 #import "SnoozeJoke.h"
-#import "UIColor+AMTheme.h"
-#import "UIFont+AMTheme.h"
-#import "UINavigationBar+AMTheme.h"
 
 @interface AppDelegate ()
 
@@ -41,9 +41,9 @@
     [Parse setApplicationId:@"I62Vun47l0d1KLv218eijHMxPG9dK6nxy54DtqQl" clientKey:@"rLVtvCOQVMqLrb5qijsmuC2y0MZAHVyZubSrFYqC"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
-    [UINavigationBar setAm_AppearanceStyle:AMNavigationBarStyleDark];
-    [[UIBarButtonItem appearance] setTitleTextAttributes: @{ NSFontAttributeName : [UIFont am_book14], NSForegroundColorAttributeName: [UIColor am_whiteColor] } forState:UIControlStateNormal];
-    [[UITableViewCell appearance] setTintColor:[UIColor am_whiteColor]];
+    [[AMNavigationAppearance sharedInstance] setStyle:AMNavigationAppearanceStyleDark];
+    [[UIBarButtonItem appearance] setTitleTextAttributes: @{ NSFontAttributeName : [AMFont book14], NSForegroundColorAttributeName: [AMColor whiteColor] } forState:UIControlStateNormal];
+    [[UITableViewCell appearance] setTintColor:[AMColor whiteColor]];
     
     self.alarmEngine = [AlarmEngine loadFromSavedData];
     self.rootViewController.alarmEngine = self.alarmEngine;
@@ -84,26 +84,29 @@
 - (void)updateAlarmQueue
 {
     Alarm *firstFiredAlarm = self.alarmQueue.firstObject;
-    [[[UIAlertView alloc] initWithTitle:firstFiredAlarm.joke
-                                message:nil
-                               delegate:self
-                      cancelButtonTitle:nil
-                      otherButtonTitles:@"Snooze", @"Dismiss",nil] show];
-    if (firstFiredAlarm.alarmSong) {
+    if (firstFiredAlarm.notification.soundName) {
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"0" ofType:@".wav"];
+        NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+        
+        self.aVPlayer = [[AVPlayer alloc] initWithURL:soundURL];
+        [self.aVPlayer play];
+    } else if (firstFiredAlarm.alarmSong) {
         NSURL *songUrl = [firstFiredAlarm.alarmSong valueForProperty:MPMediaItemPropertyAssetURL];
         [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
         self.aVPlayer = [[AVPlayer alloc] initWithURL:songUrl];
         [self.aVPlayer play];
     }
-//    else {
-//        NSString *soundPath = firstFiredAlarm.notification.soundName;
-//        NSURL *songUrl = [NSURL URLWithString:soundPath];
-//        self.aVPlayer = [[AVPlayer alloc] initWithURL:songUrl];
-//        [self.aVPlayer play];
-//    }
+    
+    [[[UIAlertView alloc] initWithTitle:firstFiredAlarm.joke
+                                message:nil
+                               delegate:self
+                      cancelButtonTitle:nil
+                      otherButtonTitles:@"Snooze", @"Dismiss",nil] show];
 }
 
 #pragma mark - UIAlertViewDelegate
+
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {

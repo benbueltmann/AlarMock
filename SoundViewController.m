@@ -12,10 +12,10 @@
 #import "SoundViewController.h"
 
 #import "AddAlarmViewController.h"
+#import "AMColor.h"
+#import "AMFont.h"
+#import "AMNavigationAppearance.h"
 #import "AMRadialGradientLayer.h"
-#import "UIColor+AMTheme.h"
-#import "UIFont+AMTheme.h"
-#import "UINavigationBar+AMTheme.h"
 #import "UIScreen+AMScale.h"
 
 @interface SoundViewController () <UITableViewDataSource, UITableViewDelegate, MPMediaPickerControllerDelegate>
@@ -79,9 +79,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.lastIndexPath = indexPath;
+    
     if (indexPath.section == 1) {
-        
-        [UINavigationBar setAm_AppearanceStyle:AMNavigationBarStyleLight];
+        [[AMNavigationAppearance sharedInstance] setStyle:AMNavigationAppearanceStyleLight];
 
         MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
         
@@ -90,8 +92,6 @@
         mediaPicker.prompt = @"What song would you like stuck in your head?";
         [self presentViewController:mediaPicker animated:YES completion:nil];
     } else {
-        self.lastIndexPath = indexPath;
-        //TODO:Pick notification sounds
         self.notificationSoundText = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
         
         NSString *soundPath = [[NSBundle mainBundle] pathForResource:self.notificationSoundText ofType:@".wav"];
@@ -105,21 +105,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SoundCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SoundCell" forIndexPath:indexPath];
 
-    cell.textLabel.textColor = [UIColor am_whiteColor];
+    cell.textLabel.textColor = [AMColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 0) {
-        cell.textLabel.font = [UIFont am_book22];
+        cell.textLabel.font = [AMFont book22];
         cell.textLabel.text = [self.sounds objectAtIndex:indexPath.row];
     } else {
-        cell.textLabel.font = [UIFont am_book16];
+        cell.textLabel.font = [AMFont book16];
         cell.textLabel.text = @"Choose a song from your Library";
-    }
-    
-    if(cell == nil )
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"SoundCell"];
     }
     
     if ([indexPath compare:self.lastIndexPath] == NSOrderedSame) {
@@ -143,11 +138,11 @@
 
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
 {
-    [UINavigationBar setAm_AppearanceStyle:AMNavigationBarStyleDark];
+    [[AMNavigationAppearance sharedInstance] setStyle:AMNavigationAppearanceStyleDark];
 
     [self dismissViewControllerAnimated:YES completion:^{
         self.alarmSong = [mediaItemCollection.items objectAtIndex:0];
-        [[[UIAlertView alloc] initWithTitle:@"If you actually want this song to wake you up, keep AlarMock open or in the background"
+        [[[UIAlertView alloc] initWithTitle:@"If you choose a song as your alarm tone, the phone must be locked with Alarm Mock open in the background"
                                     message:nil
                                    delegate:self
                           cancelButtonTitle:nil
@@ -157,7 +152,7 @@
 
 -(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
 {
-    [UINavigationBar setAm_AppearanceStyle:AMNavigationBarStyleDark];
+    [[AMNavigationAppearance sharedInstance] setStyle:AMNavigationAppearanceStyleDark];
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }

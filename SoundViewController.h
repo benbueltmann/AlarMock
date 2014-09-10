@@ -7,7 +7,6 @@
 //
 
 #import "AMViewController.h"
-#import <UIKit/UIKit.h>
 
 @protocol SoundViewControllerDelegate;
 

@@ -8,8 +8,8 @@
 
 #import "AlarMockTableViewCell.h"
 
-#import "UIColor+AMTheme.h"
-#import "UIFont+AMTheme.h"
+#import "AMColor.h"
+#import "AMFont.h"
 
 @interface AlarMockTableViewCell ()
 
@@ -27,12 +27,12 @@
 {
     [super awakeFromNib];
     
-    self.textLabel.textColor = [UIColor am_whiteColor];
+    self.textLabel.textColor = [AMColor whiteColor];
     self.backgroundColor = [UIColor clearColor];
     
-    self.cellSwitch.onTintColor = [UIColor am_switchTintColor];
-    self.cellSwitch.tintColor = [UIColor am_switchTintColor];
-    self.cellSwitch.thumbTintColor = [UIColor am_switchThumbColor];
+    self.cellSwitch.onTintColor = [AMColor switchTintColor];
+    self.cellSwitch.tintColor = [AMColor switchTintColor];
+    self.cellSwitch.thumbTintColor = [AMColor switchThumbColor];
 }
 
 #pragma mark - Accessors
@@ -50,14 +50,14 @@
 - (void)setText:(NSString *)text timeFormatted:(BOOL)timeFormatted
 {
     if (!timeFormatted) {
-        self.textLabel.font = [UIFont am_book16];
+        self.textLabel.font = [AMFont book16];
         self.textLabel.text = text;
     } else {
-        self.textLabel.font = [UIFont am_book48];
+        self.textLabel.font = [AMFont book48];
 
         NSRange range = NSMakeRange([text stringByReplacingOccurrencesOfString:@" " withString:@""].length - 2, 2);
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[text stringByReplacingOccurrencesOfString:@" " withString:@""]];
-        [attributedString addAttribute:NSFontAttributeName value:[UIFont am_book28] range:range];
+        [attributedString addAttribute:NSFontAttributeName value:[AMFont book28] range:range];
         [[attributedString string] stringByReplacingOccurrencesOfString:@" " withString:@""];
         self.textLabel.attributedText = attributedString;
     }

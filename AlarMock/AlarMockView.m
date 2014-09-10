@@ -6,13 +6,10 @@
 //  Copyright (c) 2014 AlarMock Industries. All rights reserved.
 //
 
-#import <FXBlurView.h>
-#import <Masonry.h>
-
 #import "AlarMockView.h"
 
+#import "AMColor.h"
 #import "AMRadialGradientLayer.h"
-#import "UIColor+AMTheme.h"
 #import "UIScreen+AMScale.h"
 
 @interface AlarMockView ()
@@ -32,7 +29,7 @@
     self.gradientLayer = ({
         AMRadialGradientLayer *gradientLayer = [AMRadialGradientLayer layer];
         
-        gradientLayer.colors = [UIColor am_backgroundGradientColors];
+        gradientLayer.colors = [AMColor backgroundGradientColors];
         
         gradientLayer.locations = @[@0.0f, @1.0f];
         

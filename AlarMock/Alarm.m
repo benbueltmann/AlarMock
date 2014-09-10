@@ -7,6 +7,7 @@
 //
 
 #import "Alarm.h"
+#import "AlarmJoke.h"
 
 #import "JokeCollection.h"
 
@@ -94,7 +95,9 @@ NSString * const kAlarmValueChangedNotification = @"AlarmValueChangedNotificatio
     if (self.hasSnoozed) {
         self.notification.alertBody = self.jokeCollection.randomSnoozeJoke;
     } else {
-        self.notification.alertBody = self.jokeCollection.randomAlarmJoke;
+        AlarmJoke *joke = self.jokeCollection.randomAlarmJoke;
+        self.notification.alertBody = joke.joke;
+        self.spokenJokeWavFile = joke.wav;
     }
 }
 

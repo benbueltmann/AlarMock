@@ -75,13 +75,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AlarMockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
+    AlarMockTableViewCell *cell;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"cellDetailID"];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
+    }
+
     cell.textLabel.text = [self.settings objectAtIndex:indexPath.row];
     cell.textLabel.font = [AMFont book22];
+    cell.selectedBackgroundView = [UIView new];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
+
     if (indexPath.row == 0) {
-        cell.cellSwitch.hidden = YES;
+        cell.textLabel.font = [AMFont book22];
+        cell.selectedBackgroundView = [UIView new];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
+        cell.detailTextLabel.text = @"IODSFJ";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        [cell.cellSwitch setOn:NO];
     }
-    [cell.cellSwitch setOn:NO];
     
     return cell;
 }

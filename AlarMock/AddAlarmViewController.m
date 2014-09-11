@@ -91,6 +91,7 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.font = [AMFont book14];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
 
     if (indexPath.row == 0) {

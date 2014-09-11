@@ -123,7 +123,7 @@
     } else {
         cell.textLabel.font = [AMFont book16];
         if (self.alarmSong) {
-            cell.detailTextLabel.text = [self.alarmSong valueForProperty:MPMediaItemPropertyAlbumTitle];
+            cell.detailTextLabel.text = [self.alarmSong valueForProperty:MPMediaItemPropertyTitle];
         }
         cell.textLabel.text = @"Choose a song from your Library";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

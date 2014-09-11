@@ -38,7 +38,7 @@
     self.notificationSoundText = [NSString new];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    self.sounds = @[@"Bothersome Sound", @"Irritating Sound", @"Vexatious Sound", @"Woefully Unpleasant Sound"];
+    self.sounds = ALERTSOUNDS;
     self.tableView.backgroundColor = [UIColor clearColor];
 }
 
@@ -115,13 +115,16 @@
     if (indexPath.section == 0) {
         cell.textLabel.font = [AMFont book16];
         cell.textLabel.text = [self.sounds objectAtIndex:indexPath.row];
-        if ([indexPath compare:self.lastIndexPath] == NSOrderedSame) {
+        if ([indexPath compare:self.lastIndexPath] == NSOrderedSame){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     } else {
         cell.textLabel.font = [AMFont book16];
+        if (self.alarmSong) {
+            cell.detailTextLabel.text = [self.alarmSong valueForProperty:MPMediaItemPropertyAlbumTitle];
+        }
         cell.textLabel.text = @"Choose a song from your Library";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];

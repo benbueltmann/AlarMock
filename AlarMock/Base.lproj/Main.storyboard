@@ -35,8 +35,8 @@
                                                         <action selector="switchDidChangeValue:" destination="vXZ-lx-hvc" eventType="valueChanged" id="PQw-bP-fnM"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3b1-3M-hkE">
-                                                    <rect key="frame" x="15" y="11" width="226" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3b1-3M-hkE">
+                                                    <rect key="frame" x="0.0" y="11" width="227" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -44,10 +44,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="naV-Od-VO3" secondAttribute="trailing" constant="15" id="4Wy-HG-aVK"/>
-                                                <constraint firstItem="naV-Od-VO3" firstAttribute="leading" secondItem="3b1-3M-hkE" secondAttribute="trailing" constant="15" id="7w0-Ts-qc0"/>
+                                                <constraint firstAttribute="trailing" secondItem="naV-Od-VO3" secondAttribute="trailing" constant="15" id="86O-dr-Hki"/>
                                                 <constraint firstAttribute="centerY" secondItem="naV-Od-VO3" secondAttribute="centerY" id="9vk-V0-P4a"/>
-                                                <constraint firstItem="3b1-3M-hkE" firstAttribute="leading" secondItem="mmb-KU-PI1" secondAttribute="leading" constant="15" id="QB8-Ip-CBS"/>
+                                                <constraint firstItem="3b1-3M-hkE" firstAttribute="leading" secondItem="mmb-KU-PI1" secondAttribute="leading" id="aEf-jS-mfM"/>
+                                                <constraint firstItem="naV-Od-VO3" firstAttribute="leading" secondItem="3b1-3M-hkE" secondAttribute="trailing" constant="29" id="lPb-Mp-VG9"/>
                                                 <constraint firstAttribute="centerY" secondItem="3b1-3M-hkE" secondAttribute="centerY" id="nXm-6T-fwP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -276,7 +276,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-KO-J7T" userLabel="Slider Value Label">
-                                <rect key="frame" x="36" y="415" width="257" height="21"/>
+                                <rect key="frame" x="32" y="415" width="257" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>

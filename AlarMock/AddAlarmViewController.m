@@ -30,6 +30,9 @@
 @property (strong, nonatomic) NSArray *daysChecked;
 @property (strong, nonatomic) MPMediaItem *alarmSong;
 
+@property (nonatomic) NSIndexPath *lastIndexPath;
+
+
 @end
 
 @implementation AddAlarmViewController
@@ -89,12 +92,17 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
-    SoundViewController *SoundVC;
+
     if (indexPath.row == 0) {
         cell.textLabel.font = [AMFont book22];
         cell.selectedBackgroundView = [UIView new];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.33 green:0.42 blue:0.55 alpha:1];
-        cell.detailTextLabel.text = [@"%@", ];
+        if (self.alarmSong) {
+        } else {
+            cell.detailTextLabel.text = ALERTSOUNDS[self.notificationSoundText.integerValue];
+
+        }
+        cell.detailTextLabel.text = ALERTSOUNDS[self.notificationSoundText.integerValue];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         [cell.cellSwitch setOn:NO];
@@ -118,6 +126,8 @@
 {
     if ([segue.destinationViewController isKindOfClass:[SoundViewController class]]) {
         ((SoundViewController *)[segue destinationViewController]).delegate = self;
+        //pass the index and then you can set the checkmark
+
     }
 }
 

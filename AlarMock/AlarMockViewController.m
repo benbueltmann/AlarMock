@@ -74,7 +74,8 @@
     dateFormatter.timeStyle = NSDateFormatterShortStyle;
     [dateFormatter setDateFormat:@"h:mm a"];
     NSString *timeString = [dateFormatter stringFromDate:alarm.fireDate];
-    [cell setText:timeString timeFormatted:YES];
+    NSString *timeStringPlus = [NSString stringWithFormat:@"%@", timeString];
+    [cell setText:timeStringPlus timeFormatted:YES];
     self.currentAlarm = self.alarmEngine.alarms[indexPath.row];
 
     return cell;
